@@ -10,7 +10,7 @@ const port=8080
 DbConenction()
 
 let cors_option={
-    origin:"http://192.168.243.94:5173",
+    origin:"http://192.168.0.106:5173",
     credentials:true
 }
 

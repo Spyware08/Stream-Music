@@ -47,7 +47,7 @@ export default function Homepage() {
   }, []);
 
   return (
-    <div className="overflow-scroll overflow-x-hidden w-full p-4">
+    <div className="container overflow-scroll h-[100vh] overflow-x-hidden w-full p-4">
       <h1 className="text-3xl font-bold ">Welcome to <span className='text-blue-600 font-serif'>Stream Music</span></h1>
       <p className='mt-[-7px] ml-1 mb-5 text-sm font-semibold'>Here you Listen your Favorite Artists</p>
       <h2 className=''>Listen our Best <span className='text-blue-600 font-semibold' >Singers</span> :</h2>

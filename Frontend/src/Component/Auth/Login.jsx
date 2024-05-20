@@ -1,11 +1,13 @@
 import React from 'react';
-import { useRef,useState } from 'react';
+import { useRef, useState } from 'react';
 import API from '../API/Api';
 import { Toaster, toast } from 'sonner'
+import { useNavigate } from 'react-router-dom';
 
 const Login = () => {
     const useremail = useRef()
     const userpassword = useRef()
+    const navigate = useNavigate()
 
 
     async function HandleSubmit(e) {
@@ -27,7 +29,12 @@ const Login = () => {
                 // console.log(res.data.userdata);
                 sessionStorage.setItem("userInfo", JSON.stringify(res.data.userdata));
 
-                return toast.success("Logged in sucessful")
+                toast.success("Logged in sucessful")
+
+                setTimeout(() => {
+                    return navigate('/home')
+
+                }, 1000);
 
             }
             catch (e) {
