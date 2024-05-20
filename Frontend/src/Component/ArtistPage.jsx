@@ -55,9 +55,9 @@ export default function ArtistPage() {
           <PulseLoader color="#3b82f6" />
         </div>
       ) : (
-        <ul className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2">
+        <ul className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2 ">
           {tracks.map((track, index) => (
-            <li key={index} className="border border-gray-300 rounded p-4 flex flex-col justify-between shadow-sm bg-white">
+            <li key={index} className="border border-gray-300 rounded p-4 flex flex-col justify-between bg-white cursor-pointer hover:border-blue-500 hover:drop-shadow-xl">
 
 
               <div className="text-start">

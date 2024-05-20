@@ -50,7 +50,7 @@ export default function Search() {
   const handlePlay = (audioElement) => {
     if (currentAudio && currentAudio !== audioElement) {
       currentAudio.pause();
-      currentAudio.currentTime = 0; // Optional: reset the playback position
+      currentAudio.currentTime = 0; 
     }
     setCurrentAudio(audioElement);
   };
@@ -77,7 +77,7 @@ export default function Search() {
       ) : (
         <ul className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2">
           {tracks.map((track, index) => (
-            <li key={index} className="border border-gray-300 rounded p-4 flex flex-col justify-between shadow-sm bg-white">
+            <li key={index} className="border border-gray-300 rounded p-4 flex flex-col justify-between hover:shadow-xl cursor-pointer hover:border-blue-500 bg-white">
 
 
               <div className="text-start">

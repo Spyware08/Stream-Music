@@ -9,7 +9,7 @@ import ArtistPage from "./Component/ArtistPage";
 
 export default function App() {
   const navigate = useNavigate();
-  const userData = JSON.parse(sessionStorage.getItem('userInfo')); // Use consistent key
+  const userData = JSON.parse(sessionStorage.getItem('userInfo'));
 
   useEffect(() => {
     if (!userData) {
@@ -17,7 +17,7 @@ export default function App() {
     } else {
       navigate('/home');
     }
-  }, []); // Empty dependency array to run only once after the initial render
+  }, []); 
 
   return (
     <div className="bg-gradient-to-r from-violet-400 to-blue-100">

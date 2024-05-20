@@ -10,7 +10,6 @@ export default function Homepage() {
   const [artists, setArtists] = useState([]);
   const [loading, setLoading] = useState(false);
 
-  const [error, setError] = useState(null);
 
   useEffect(() => {
     const fetchArtists = async () => {
@@ -39,7 +38,6 @@ export default function Homepage() {
 
       } catch (error) {
         console.error('Error fetching artists:', error);
-        setError('Error fetching artists. Please try again.');
       }
     };
 
@@ -60,7 +58,7 @@ export default function Homepage() {
       ) : (
         <ul className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-2">
           {artists.map((artist, index) => (
-            <li key={index} className="border border-gray-300 rounded p-4 flex flex-col shadow-sm bg-gray-100 ">
+            <li key={index} className="border border-gray-300 rounded p-4 flex flex-col shadow-sm bg-gray-100 hover:border-blue-500 hover:shadow-xl ">
               <Link to={`/artist/${artist.id}`}>
                 {artist.images.length > 0 && (
                   <img src={artist.images[0].url} alt={artist.name} className="w-full h-48 object-contain mb-4 rounded" />
