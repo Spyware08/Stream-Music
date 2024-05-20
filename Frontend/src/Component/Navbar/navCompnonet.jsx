@@ -8,7 +8,7 @@ import { NavLink } from "react-router-dom";
 const Sidebar = () => {
     const [open, setOpen] = useState(false);
     const Menus = [
-        { title: "Home", path: "/", icon: <IoMdHome /> },
+        { title: "Home", path: "/home", icon: <IoMdHome /> },
         { title: "Search", path: "/search", icon: <IoMdSearch /> },
         { title: "Library", path: "/library", icon: <MdOutlineLibraryMusic />, gap: true },
     ];

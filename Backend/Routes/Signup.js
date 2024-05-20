@@ -5,7 +5,6 @@ import { createHashing } from "../Functions/Hashing/createHash.js";
 export let Signupdata = Router()
 
 Signupdata.post("/signup", async (req, res) => {
-    console.log("res from frontend", req.body);
     const {username, useremail, userpassword} = req.body
 
     if (username && useremail && userpassword) {

@@ -1,32 +1,34 @@
-import React from "react";
-import { Route, Routes } from "react-router-dom";
-import Homepage from "./Component/Hero Section/Hompage";
+import React, { useEffect } from "react";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Nav from "./Component/Navbar/Nav";
-import Search from "./Component/Hero Section/Search";
+
+import { useNavigate } from "react-router-dom";
+import Homepage from "./Component/Hero Section/Hompage";
 import Library from "./Component/Hero Section/Library";
+import LandingPage from "./Component/Hero Section/LandingPage";
+import Search from "./Component/Hero Section/Search";
 import ArtistPage from "./Component/ArtistPage";
-import SignupForm from "./Component/Auth/Signup";
-import Login from "./Component/Auth/Login";
 
 export default function App() {
-  return (
-    <>
-      <div className="bg-gradient-to-r from-violet-400 to-blue-100  ">
-        {/* <div className="flex h-[100vh]">
-          <Nav />
-          <Routes>
-            <Route path="/" element={<Homepage />} />
-            <Route path="/search" element={<Search />} />
-            <Route path="/library" element={<Library />} />
-            <Route path="/artist/:id" element={<ArtistPage />} />
-          </Routes>
-        </div> */}
-        {/* <SignupForm/> */}
-        <Login/>
-        <div>
+  const navigate = useNavigate();
+  let userData = JSON.parse(sessionStorage.getItem('userData'));
 
-        </div>
-      </div>
-    </>
+ 
+
+  return (
+    <div className="bg-gradient-to-r from-violet-400 to-blue-100">
+      <Routes>
+        <Route path="/" element={<Nav />}>
+
+          <Route path="home" element={<Homepage/>}/>
+
+          <Route path="search" element={<Search />} />
+          <Route path="Library" element={<Library />} />
+          <Route path="artist/:id" element={<ArtistPage />} />
+
+        </Route>
+      </Routes>
+
+    </div>
   );
 }

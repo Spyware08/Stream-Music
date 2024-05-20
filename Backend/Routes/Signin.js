@@ -17,8 +17,8 @@ LoginRoute.post("/login", async (req, res) => {
                 if (isPassword) {
                     console.log("login");
                     const token = jwt.sign({ name: req.body.exist_user }, process.env.JWT_SECRET, { algorithm: "HS256", expiresIn: "1d" });
-                    const { username, MusicList } = exist_user
-                    let userdata = { username, MusicList };
+                    const { useremail, MusicList } = exist_user
+                    let userdata = { useremail, MusicList };
                     console.log(userdata);
                     return res.status(200).json({ userdata, message: "logged in" });
                 }
