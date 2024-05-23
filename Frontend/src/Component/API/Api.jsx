@@ -1,6 +1,6 @@
 import axios from "axios";
 const API = axios.create({
-    baseURL: "http://192.168.243.94:8080",
+    baseURL: "https://streammusic-backend.vercel.app",
     timeout: 10000, // 10 seconds in milliseconds
     headers: {
         "Content-Type": "application/json",
