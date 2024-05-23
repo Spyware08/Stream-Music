@@ -124,7 +124,7 @@ const Login = () => {
 
                 </div>
             </div>
-            <Toaster richColors position="top-center" />
+            <Toaster richColors position="top-center"  className="max-sm:w-[18rem] max-sm:mx-auto"/>
 
 
         </div>

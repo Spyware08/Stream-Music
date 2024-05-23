@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import Login from '../Auth/Login';
 import SignupForm from '../Auth/Signup';
-import { DiLaravel } from 'react-icons/di';
 
 export default function LandingPage() {
   const [isLogin, setIsLogin] = useState(true);

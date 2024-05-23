@@ -7,7 +7,7 @@ export const LoginRoute = Router();
 
 LoginRoute.post("/login", async (req, res) => {
     const { useremail, userpassword } = req.body;
-    console.log(req.body);
+    console.log("login req Recieve");
 
     if (useremail && userpassword) {
         try {
@@ -19,7 +19,7 @@ LoginRoute.post("/login", async (req, res) => {
                     const token = jwt.sign({ name: req.body.exist_user }, process.env.JWT_SECRET, { algorithm: "HS256", expiresIn: "1d" });
                     const { useremail, MusicList } = exist_user
                     let userdata = { useremail, MusicList };
-                    console.log(userdata);
+                    console.log("Required Data send to FrontEnd");
                     return res.status(200).json({ userdata, message: "logged in" });
                 }
                 return res.status(401).send("Wrong Password");

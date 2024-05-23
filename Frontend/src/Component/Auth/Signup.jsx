@@ -2,11 +2,13 @@ import React from 'react';
 import { useRef } from 'react';
 import API from '../API/Api';
 import { Toaster, toast } from 'sonner'
+import { useNavigate } from 'react-router-dom';
 
 const SignupForm = () => {
   const username = useRef()
   const useremail = useRef()
   const userpassword = useRef()
+  const navigate=useNavigate()
 
   const HandleSubmit = async (e) => {
     e.preventDefault()
@@ -21,9 +23,14 @@ const SignupForm = () => {
         useremail: useremail.current.value,
         userpassword: userpassword.current.value,
       }
+      console.log("Sigmup",submitdata);
       try {
         await API.post("/signup", submitdata).then((e) => {
           toast.success("Account created")
+          setTimeout(() => {
+            return navigate("/auth")
+            
+          }, 1000);
         })
 
       }
@@ -103,7 +110,7 @@ const SignupForm = () => {
           </div>
         </form>
       </div>
-      <Toaster richColors position="top-center" />
+      <Toaster richColors position="top-center" className="max-sm:w-[18rem] max-sm:mx-auto" />
     </div>
   );
 }

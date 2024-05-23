@@ -6,7 +6,7 @@ const User = new Schema({
     username: { type: String },
     useremail: { type: String },
     userpassword: { type: String },
-    MusicList: [{ type: String, default:""}],
+    MusicList: [{ type: String}],
 
 })
 
