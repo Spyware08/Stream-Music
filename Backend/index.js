@@ -10,7 +10,7 @@ const port=8080
 DbConenction()
 
 let cors_option={
-    origin:["http://192.168.0.105:5173","http://192.168.243.94:5173"],
+    origin:["https://stream-music-gamma.vercel.app","http://192.168.0.105:5173","http://192.168.243.94:517"],
     credentials:true
 }
 
