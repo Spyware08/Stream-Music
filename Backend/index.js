@@ -11,6 +11,7 @@ DbConenction()
 
 let cors_option={
     origin:["https://stream-music-gamma.vercel.app","http://192.168.224.94:5173"],
+
     credentials:true
 }
 
