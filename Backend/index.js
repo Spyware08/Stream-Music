@@ -19,7 +19,14 @@ const cors_option = {
 };
 
 app.use(cors(cors_option));
-app.options("*", cors(cors_option)); /
+app.options("*", cors(cors_option)); 
+
+app.get("/", async (req, res) => {
+   
+
+    return res.send({msg:"Running"})
+
+})
 
 // app.use(Verifier)
 
