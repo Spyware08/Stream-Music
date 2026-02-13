@@ -24,3 +24,21 @@ FavList.post("/favsong", async (req, res) => {
     }
 
 })
+FavList.get("/allSong", async (req, res) => {
+
+    try {
+        const exist_user = await Usermodel.find().lean()
+
+        if (exist_user) {
+            const { MusicList } = exist_user
+            let userdata = { MusicList }
+            res.status(200).json(userdata)
+            console.log(userdata);
+        }
+
+    }
+    catch (e) {
+        console.log("err", e);
+    }
+
+})
