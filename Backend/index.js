@@ -9,14 +9,17 @@ const app=express()
 const port=8080
 DbConenction()
 
-let cors_option={
-    origin:["https://stream-music-gamma.vercel.app","http://192.168.224.94:5173"],
+const cors_option = {
+  origin: [
+    "https://stream-music-song.vercel.app", 
+    "http://192.168.224.94:5173"           
+  ],
+  credentials: true,
+  methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+};
 
-    credentials:true
-}
-
-app.use(express.json())
-app.use(cors(cors_option))
+app.use(cors(cors_option));
+app.options("*", cors(cors_option)); /
 
 // app.use(Verifier)
 
