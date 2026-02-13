@@ -9,17 +9,12 @@ const app=express()
 const port=8080
 DbConenction()
 
-const cors_option = {
-  origin: [
-    "https://stream-music-song.vercel.app", 
-    "http://192.168.224.94:5173"           
-  ],
-  credentials: true,
-  methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+const cors_options = {
+    origin: ["https://chatbook-delta.vercel.app" ],
+    credentials: true,
 };
-
-app.use(cors(cors_option));
-app.options("*", cors(cors_option)); 
+app.use(express.json())
+app.use(cors(cors_options))
 
 app.get("/", async (req, res) => {
    
