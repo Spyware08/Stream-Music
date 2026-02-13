@@ -10,7 +10,7 @@ const port=8080
 DbConenction()
 
 const cors_options = {
-    origin: ["https://chatbook-delta.vercel.app" ],
+    origin: ["https://stream-music-song.vercel.app" ],
     credentials: true,
 };
 app.use(express.json())
